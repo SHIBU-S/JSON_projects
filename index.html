@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with JSON</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>JSON Datas in Table</h1>
+    
+    <form id="data-form">
+        Id :     <input type="number" id="id" placeholder="id" required>
+        Name :   <input type="text" id="name" name="name" placeholder="name" required>
+        Age :    <input type="number" id="age" name="age" placeholder="age" required>
+        Email :  <input type="email" id="email" name="email" placeholder="email" required>
+                    <button type="submit" onclick="addNewRow()">Add Details</button>
+    </form>
+    
+    <div class="filter-section">
+        Search :               <input type="text" id="search" placeholder="Search a name or email...">  
+                                    <button onclick="searchname()">Search</button>      <p id="name_error" style="color: red;"></p>
+                                
+        Filtering Value :      <input type="number" id="age-filter" placeholder="Enter a value to filter...">
+                                    <button onclick="searchfilter()">Filtering value</button>     <p id="age_error" style="color: red;"></p>
+
+        Select a value to delete :
+                              <input type="text" id="delete" placeholder="value">
+                                    <button onclick="deleteSelectedRows()">Delete Details</button>  <p id="delete_error" style="color: red;"></p>
+                                    
+        <button onclick="sort_atoz()">Sort (A to Z)</button>
+        <button onclick="sort_ztoa()">Sort (Z to A)</button>
+    </div>
+<br><br>
+
+    <table id="data-table">
+        <thead>
+            <tr>
+                  
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>EMAIL</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablebody">
+        </tbody>
+    </table>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html> 
+
+
+
+
